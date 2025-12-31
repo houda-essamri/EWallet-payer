@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiment - E-Wallet</title>
+  <link rel="stylesheet" href="/src/css/dashboard.css">
+</head>
+<body>
+ 
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="/assets/e-Wallet6.gif" alt="Logo E-Wallet">
+      <h2>E-Wallet</h2>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">Tableau de bord</a></li>
+      <li><a href="transactions.html">Transactions</a></li>
+      <li><a href="transferer.html">Transferer</a></li>
+      <li class="active"><a href="#">Payer</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="index.html">Se déconnecter</a></li>
+    </ul>
+  </aside>
+
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <header class="topbar">
+      <h1>Paiment</h1>
+      <span id="date" class="topbar-date"></span>
+    </header>
+
+    <!-- Carte de transfert -->
+    <section class="dashboard-cards">
+    <div class="card transfer-card">
+  <h3>Payer de l'argent</h3><br>
+  <!-- <form id="transferForm"> -->
+
+      <input type="text" id="nom" placeholder=" Distinataire">
+      <input type="number" id="montant" name="montant" placeholder="0.00">
+
+      <h4 id="result"></h4>
+
+    <div class="card-actions">
+      <button  class="send-btn" id="payer">
+      <img src="/assets/payer.png" alt="Payer">
+      Payer
+    </button>
+    </div>
+  <!-- </form> -->
+</div>
+
+  <script src="/src/Controller/payer.js"></script>
+</section>
+</main>
+
+</body>
+</html>

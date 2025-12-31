@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transférer de l'argent - E-Wallet</title>
+  <link rel="stylesheet" href="/src/css/dashboard.css">
+</head>
+<body>
+ 
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="/assets/e-Wallet6.gif" alt="Logo E-Wallet">
+      <h2>E-Wallet</h2>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="dashboard.html">Tableau de bord</a></li>
+      <li><a href="transactions.html">Transactions</a></li>
+      <li class="active"><a href="#">Transferer</a></li>
+      <li><a href="payer.html">Payer</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="index.html">Se déconnecter</a></li>
+
+    </ul>
+  </aside>
+
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <header class="topbar">
+      <h1>Transfert d'argent</h1>
+      <span id="date" class="topbar-date"></span>
+    </header>
+
+    <!-- Carte de transfert -->
+    <section class="dashboard-cards">
+    <div class="card transfer-card">
+  <h3>Envoyer de l'argent</h3>
+  <!-- <form id="transferForm"> -->
+      <input type="text" id="nom" placeholder="Entrer le nom">
+      <input type="text" id="compte" name="compte" placeholder="Entrer le numéro de compte">
+    
+      <input type="number" id="montant" name="montant" placeholder="0.00">
+    <div class="card-actions">
+      <button class="send-btn" id="envoyer">
+        <img src="/assets/depot.png" alt="Envoyer">
+        Envoyer
+      </button>
+    </div>
+  <!-- </form> -->
+</div>
+
+  <script type="module" src="/src/Controller/transferer.js"></script>
+
+</body>
+</html>

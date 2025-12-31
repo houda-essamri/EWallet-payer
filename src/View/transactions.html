@@ -1,0 +1,63 @@
+  
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiment - E-Wallet</title>
+  <link rel="stylesheet" href="/src/css/dashboard.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+        <img src="/assets/e-Wallet6.gif" alt="Logo E-Wallet">
+        <h2>E-Wallet</h2>
+        </div>
+        <ul class="sidebar-menu">
+        <li><a href="dashboard.html">Tableau de bord</a></li>
+        <li class="active"><a href="#">Transactions</a></li>
+        <li><a href="transferer.html">Transferer</a></li>
+        <li><a href="payer.html">Payer</a></li>
+        <li><a href="#">Profil</a></li>
+        <li><a href="index.html">Se déconnecter</a></li>
+        </ul>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <header class="topbar">
+        <h1>Historique des transactions</h1>
+        <span id="date" class="topbar-date"></span>
+        </header>
+         <div class="card stats-card">
+        <h3>Transactions </h3> <br>
+        <table id ="transactions" class="transactions-table">
+          <thead>
+        <tr>
+          <select id="choix">
+              <option value="Toutes" selected>Toutes</option>
+              <option value="Sorties">Sorties</option>
+              <option value="Entrees">Entrees</option>
+         </select>
+          <input type="text" id="Recherche" placeholder="Rechercher">
+        </tr>
+        <tr>
+         <th>Date</th>
+         <th>Description</th>
+         <th>Type</th>
+         <th>Montant</th>
+      </tr>
+     </thead>
+      <tbody id="tbody">
+    <!-- Les transactions seront injectées ici -->
+
+
+  </tbody>
+        </table>
+      </div>
+    </section>
+
+    </main>
+    <script src="/src/Controller/transactions.js"></script>
+    </body>
+    </html>
