@@ -29,7 +29,7 @@ function paiment(){
 
 function verifierMontant(){
     return new Promise((resolve, reject)=>{
-        if( montant.value <= currentUser.Solde && montant.value > 0){
+        if( montant.value <= currentUser.balance && montant.value > 0){
             resolve("Paiment effectue avec Succes");
         } else {
             reject("Un probleme au niveau de Solde!!");
@@ -44,13 +44,13 @@ function addTransaction(){
         title: nom.value,
         date: new Date().toLocaleDateString(),
         amount: montant.value,
-        statue : "Succes"
+        statut : "Succes"
     }
     currentUser.Transactions.unshift(transaction);
     sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 }
 
 function updateSolde(){
-    currentUser.Solde -= montant.value;
+    currentUser.balance -= montant.value;
     sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
 }

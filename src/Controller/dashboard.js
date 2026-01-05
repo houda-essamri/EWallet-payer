@@ -7,13 +7,16 @@ const Recherche = document.getElementById("Recherche");
 const tbody = document.getElementById("tbody");
 const transferer = document.getElementById("transferer");
 const payer = document.getElementById("payer");
+const recharger = document.getElementById("recharger");
 
 
 message.textContent = "Bonjour " + user.nom;
-balance.textContent = user.Solde;
+balance.innerText = user.balance + " DH";
+
+
+
 
 choix.addEventListener("click", flitrerTransactions);
-
 
 function createRow(element){
     const ligne = document.createElement("tr");
@@ -31,7 +34,7 @@ function createRow(element){
     columnDate.textContent = element.date;
     columnDescription.textContent = element.title;
     columnType.textContent = element.type;
-    columnMontant.textContent = element.amount;
+    columnMontant.textContent = element.amount + "DH";
     
     tbody.appendChild(ligne);
 }
@@ -65,7 +68,6 @@ function flitrerTransactions(){
     }
 
 }
-
 //Transfere
 
 transferer.addEventListener("click",trans);
@@ -74,7 +76,14 @@ function trans(){
     
     window.location.href = "/src/View/transferer.html";
 }
+// payer
 
 payer.addEventListener("click",()=>{
     window.location.href = "/src/View/payer.html";
+})
+
+// recharger
+
+recharger.addEventListener("click",()=>{
+    window.location.href = "/src/View/recharger.html";
 })

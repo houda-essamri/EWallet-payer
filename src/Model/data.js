@@ -1,89 +1,69 @@
 const users = [
-    {
-        nom : "HOUDA",
-        email : "houda@gmail.com",
-        password : "1234",
-        numCompte : "0000000",
-        Solde : 2,
-        Transactions: []
-        
-    },
-    {
-        nom : "Omar",
-        email : "omaromar@gmail.com",
-        password : "aaaa",
-        numCompte : "09090909",
-        Solde : 3000,
-        Transactions: [
+  {
+    id : 1,
+    nom: "Houda",
+    email: "houda@gmail.com",
+    password: "1234",
+    balance : 300,
+    cartes: [
+      {
+        numCompte: "11111",
+        Solde: 12000
+      }
+    ],
+    Transactions: [
+          {
+          type: "+",
+          title: "Salaire",
+          date: "01/12/2025",
+          amount: 2000,
+          statut: "Succes"
+        },
+        {
+          type: "-",
+          title: "Marjane",
+          date: "05/12/2025",
+          amount: 500,
+          statut: "Succes"
+        },
+    ]
+  },
+  {
+    id : 2,
+    nom: "Omar",
+    email: "omaromar@gmail.com",
+    password: "aaaa",
+    balance : 2000,
+    cartes: [
+      {
+        numCompte: "22222",
+        Solde: 3000
+      },
+      {
+        numCompte: "33333",
+        Solde: 5000
+      } 
+    ],
+    Transactions: [
             {
-                type: "-",
-                title: "Temu",
-                date: "10/12/2025",
-                amount: 300,
-                statue : "Succes"
-            },
-            {
-                type: "+",
-                title: "Salaire",
-                date: "3/12/2025",
-                amount: 8000,
-                statue : "Succes"
-            },
-            {
-                type: "-",
-                title: "ONCF",
-                date: "19/11/2025",
-                amount: 30,
-                statue : "Succes"
-            },
-           
-            {
-                type: "+",
-                title: "Salaire",
-                date: "3/11/2025",
-                amount: 8000,
-                statue : "Succes"
-            }
-        ]
-    },
-    {
-        nom : "Salima",
-        email : "Salima@gmail.com",
-        password : "0000",
-        numCompte : "5656565656",
-        Solde : 7000,
-        Transactions: [
-            {
-                type: "-",
-                title: "Temu",
-                date: "10/12/2025",
-                amount:300,
-                statue : "Succes"
-            },
-            {
-                type: "+",
-                title: "Salaire",
-                date: "3/12/2025",
-                amount: 8000,
-                statue : "Succes"
-            },
-            {
-                type: "-",
-                title: "ONCF",
-                date: "19/11/2025",
-                amount: 30,
-                statue : "Succes"
-            },
-            {
-                type: "+",
-                title: "Salaire",
-                date: "3/11/2025",
-                amount: 8000,
-                statue : "Succes"
-            }
-        ]
-    }
-]
+            type: "-",
+            title: "Temu",
+            date: "10/12/2025",
+            amount: 300,
+            statut: "Succes"
+          },
+          {
+            type: "+",
+            title: "Salaire",
+            date: "03/12/2025",
+            amount: 8000,
+            statut: "Succes"
+          }
+    ]
+  }
+];
+
+
 
 function findUser(email, password){
     let user = users.find((u)=>u.email === email && u.password === password);
@@ -91,8 +71,7 @@ function findUser(email, password){
 }
 
 function findUserByCompte(nom, numCompte) {
-    let user = users.find((u) =>u.numCompte === numCompte && u.nom ===nom);
-    return  user;
+  return users.find(u => u.nom === nom && u.cartes.some(c => c.numCompte === numCompte));
 }
 
 export {findUser};

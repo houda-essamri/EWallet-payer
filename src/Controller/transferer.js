@@ -1,31 +1,32 @@
-import {findUserByCompte} from "../Model/data.js";
+import { findUserByCompte } from "../Model/data.js";
+import { transferer } from "../Services/transfererSevices.js";
+
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
 const nom = document.getElementById("nom");
 const compte = document.getElementById("compte");
 const montant = document.getElementById("montant");
 const envoyer = document.getElementById("envoyer");
-// const transferForm = document.getElementById("transferForm");
 
-let user;
 
-envoyer.addEventListener("click", ()=>{
-    transferer(user)
-    .then((message)=>console.log(message))
-    .catch((error)=>(console.log(error)));
-});
+
+
+
+envoyer.addEventListener("click", handelTransferer);
  
-function transferer(user){
-    user = findUserByCompte(nom.value, compte.value);
-    return new Promise((resolve, reject)=>{
-        if (user) {
-            resolve("oui existe");
-        } else {
-            reject("non il existe pas");
-        }
-    });
-}
+function handelTransferer(){
+    let destinataire = findUserByCompte(nom.value, compte.value);
+    if(montant.value <= 0){
+        alert("enter un montant valide");
+        return;
+    }
+    transferer(montant, currentUser,destinataire)
+    .then(()=>{
+        alert("succes");
+        window.location.href="/src/View/dashboard.html";
+    })
 
+}
 
 
   

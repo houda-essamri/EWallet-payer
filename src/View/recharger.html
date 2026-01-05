@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transférer de l'argent - E-Wallet</title>
+  <title>Recharger - E-Wallet</title>
   <link rel="stylesheet" href="/src/css/dashboard.css">
 </head>
 <body>
@@ -16,39 +16,47 @@
     <ul class="sidebar-menu">
       <li><a href="dashboard.html">Tableau de bord</a></li>
       <li><a href="transactions.html">Transactions</a></li>
-      <li class="active"><a href="#">Transferer</a></li>
-      <li><a href="payer.html">Payer</a></li>
-      <li><a href="recharger.html">Recharger</a></li>
+      <li><a href="transferer.html">Transferer</a></li>
+      <li ><a href="payer.html">Payer</a></li>
+      <li class="active"><a href="#">Recharger</a></li>
       <li><a href="#">Profil</a></li>
       <li><a href="index.html">Se déconnecter</a></li>
-
     </ul>
   </aside>
 
   <!-- Contenu principal -->
   <main class="main-content">
     <header class="topbar">
-      <h1>Transfert d'argent</h1>
+      <h1>Recharger</h1>
       <span id="date" class="topbar-date"></span>
     </header>
 
     <!-- Carte de transfert -->
     <section class="dashboard-cards">
     <div class="card transfer-card">
-  <h3>Envoyer de l'argent</h3>
-      <input type="text" id="nom" placeholder="Entrer le nom">
-      <input type="text" id="compte" name="compte" placeholder="Entrer le numéro de compte">
-    
+  <h3>Recharger</h3><br>
+
+      <h4>Montant a recharger</h4><br>
+      <select id="choix">
+ 
+      </select>
       <input type="number" id="montant" name="montant" placeholder="0.00">
+
+      <h4 id="result"></h4>
+      
     <div class="card-actions">
-      <button class="send-btn" id="envoyer">
-        <img src="/assets/depot.png" alt="Envoyer">
-        Envoyer
-      </button>
+      <button  class="send-btn" id="recharger">
+      <img src="/assets/trans.png" alt="Recharger">
+      Recharger
+    </button>
     </div>
+    </div>
+
 </div>
 
-  <script type="module" src="/src/Controller/transferer.js"></script>
+  <script type="module" src="/src/Controller/recharger.js"></script>
+</section>
+</main>
 
 </body>
 </html>
